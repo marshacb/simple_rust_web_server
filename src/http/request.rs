@@ -57,16 +57,6 @@ impl<'buf> TryFrom<&'buf [u8]> for Request<'buf> {
 }
 
 fn get_next_word(request: &str) -> Option<(&str, &str)> {
-  // let mut iter = request.chars();
-
-  // loop {
-  //   let item = iter.next();
-  //   match item {
-  //     Some(c) => {}
-  //     None => break,
-  //   }
-  // }
-
   for (i, c) in request.chars().enumerate() {
     if c == ' ' || c == '\r' {
       return Some((&request[..i], &request[i + 1..]));
@@ -118,19 +108,3 @@ impl Debug for ParseError {
 }
 
 impl Error for ParseError {}
-
-// trait Encrypt {
-//   fn encrypt(&self) -> Self;
-// }
-
-// impl Encrypt for String {
-//   fn encrypt(&self) -> Self {
-//     unimplemented!()
-//   }
-// }
-
-// impl Encrypt for &[u8] {
-//   fn encrypt(&self) -> Self {
-//     unimplemented!()
-//   }
-// }

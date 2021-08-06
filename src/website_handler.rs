@@ -41,6 +41,5 @@ impl Handler for WebsiteHandler {
       },
       _ => Response::new(StatusCode::NotFound, None),
     }
-    // Response::new(StatusCode::Ok, Some("<h1>TEST</h1>".to_string()))
   }
 }

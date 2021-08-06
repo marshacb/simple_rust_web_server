@@ -42,7 +42,6 @@ impl Server {
               if let Err(e) = response.send(&mut stream) {
                 println!("Failed to send response {}", e);
               }
-              // let res: &Result<Request, _> = &buffer[..].try_into();
             }
             Err(e) => {
               println!("Failed to read from connection: {}", e);
@@ -53,12 +52,6 @@ impl Server {
       }
 
       let res = listener.accept();
-
-      // if res.is_err() {
-      //   continue;
-      // }
-
-      // let (stream, addr) = res.unwrap();
     }
   }
 }
